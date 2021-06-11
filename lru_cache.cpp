@@ -1,8 +1,6 @@
+#include "lru_cache.h"
+
 #include <iostream>
-#include <unordered_map>
-
-#include "containers/linked_list.h"
-
 /*
 ToDo:
 - Iterators
@@ -13,45 +11,43 @@ ToDo:
 */
 
 template <typename Key, typename Value>
-class LRUCache {
-public:
-    explicit LRUCache(size_t n = 10) {
-        threshold_ = n;
-    }
+LRUCache<Key, Value>::LRUCache(size_t n) {
+    threshold_ = n;
+}
 
-    ~LRUCache() {
-        // Free linked list
-    }
+// template <typename Key, typename Value>
+// ~LRUCache() {
+//     // Free linked list
+// }
 
-    Value &operator[](Key key) {
-        return table_[key].value;
-    }
+template <typename Key, typename Value>
+void Set(Key key, Value val) {
+}
 
-    void Clear() {
-        size_ = 0;
-        table_.clear();
-    }
+// template <typename Key, typename Value>
+// Value LRUCache<Key, Value>& operator[](Key key) {
+//     return table_[key].value;
+// }
 
-    // return element on the top
-    // Value peek(){
-    //     return table_[].value;
-    // }
+template <typename Key, typename Value>
+size_t LRUCache<Key, Value>::Size() {
+    return size_;
+}
 
-private:
-    struct Node {};
-    struct Data {
-        Value value;
-        Node *node;
-    };
+template <typename Key, typename Value>
+void LRUCache<Key, Value>::Clear() {
+    size_ = 0;
+    table_.clear();
+}
 
-    std::unordered_map<Key, Data> table_;
-    size_t size_;
-    size_t threshold_;
-};
+// // return element on the top
+// // Value peek(){
+// //     return table_[].value;
+// // }
 
 int main() {
     LRUCache<int, int> cache(10);
-    cache[10] = 100;
+    // cache[10] = 100;
     //     cache[10] = 10;
     return 0;
 }
