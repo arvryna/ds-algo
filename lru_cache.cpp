@@ -4,7 +4,6 @@
 /*
 ToDo:
 - Iterators
-- Setters getters
 - Import your own linked list and use it
 - Benchmark it
 - Write your own testing that can check it with large inputs
@@ -16,22 +15,27 @@ LRUCache<Key, Value>::LRUCache(size_t n) {
 }
 
 // template <typename Key, typename Value>
-// ~LRUCache() {
-//     // Free linked list
+// LRUCache<Key, Value>::~LRUCache() {
 // }
 
 template <typename Key, typename Value>
-void Set(Key key, Value val) {
+Value &LRUCache<Key, Value>::operator[](Key key) {
+    return table_[key].value;
 }
 
-// template <typename Key, typename Value>
-// Value LRUCache<Key, Value>& operator[](Key key) {
-//     return table_[key].value;
-// }
+template <typename Key, typename Value>
+bool LRUCache<Key, Value>::Delete(Key key) {
+    return true;
+}
 
 template <typename Key, typename Value>
 size_t LRUCache<Key, Value>::Size() {
     return size_;
+}
+
+template <typename Key, typename Value>
+bool LRUCache<Key, Value>::Empty() {
+    return (size_ == 0);
 }
 
 template <typename Key, typename Value>
@@ -46,8 +50,8 @@ void LRUCache<Key, Value>::Clear() {
 // // }
 
 int main() {
-    LRUCache<int, int> cache(10);
-    // cache[10] = 100;
-    //     cache[10] = 10;
+    LRUCache<std::string, int> cache(10);
+    cache["Red"] = 100;
+    std::cout << cache["Orange"] << std::endl;
     return 0;
 }
