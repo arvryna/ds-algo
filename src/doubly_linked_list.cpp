@@ -2,8 +2,6 @@
 
 template<typename T>
 DoublyLinkedList<T>::DoublyLinkedList(){
-	std::cout << "Allocating DLL";
-	
 }
 
 template<typename T>
@@ -12,6 +10,11 @@ DoublyLinkedList<T>::~DoublyLinkedList(){
 
 template<typename T>
 void DoublyLinkedList<T>::Insert(T val){
-	std::cout << "Inserting new element in DLL";
+}
+
+
+template<typename T>
+T DoublyLinkedList<T>::Peek(){
+	return head_->val;
 }
 

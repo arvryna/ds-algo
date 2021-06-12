@@ -10,6 +10,7 @@ public:
     LRUCache(size_t n);
     ~LRUCache();
 	Value &operator[](Key key);
+    // If same key is already present, it will be updated with new value
 	void Insert(Key key, Value valu);
 	void Erase(Key key);
 	bool Empty();

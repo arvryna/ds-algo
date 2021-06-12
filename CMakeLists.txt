@@ -10,6 +10,6 @@ include_directories(include)
 
 file(GLOB SOURCES *.cpp)
 
-add_executable(out_build start.cpp ${SOURCES})
+add_executable(out_build test.cpp ${SOURCES})
 
 # file(GLOB_RECURSE SRC_LIST src/*.cpp)
