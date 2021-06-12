@@ -4,14 +4,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(dsalgo)
 
-include_directories(dsalgo, include)
+add_compile_options(-Wall )
+
+include_directories(include)
 
 file(GLOB SOURCES *.cpp)
 
-add_executable(dsalgo start.cpp ${SOURCES})
+add_executable(out_build start.cpp ${SOURCES})
 
 # file(GLOB_RECURSE SRC_LIST src/*.cpp)
-# add_executable(dsalgo start.cpp ${SRC_LIST})
-
-# file(GLOB SRC_LIST src/*.cpp)
-# target_include_directories(dsalgo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

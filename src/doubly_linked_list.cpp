@@ -2,6 +2,8 @@
 
 template<typename T>
 DoublyLinkedList<T>::DoublyLinkedList(){
+	std::cout << "Allocating DLL";
+	
 }
 
 template<typename T>
@@ -10,6 +12,6 @@ DoublyLinkedList<T>::~DoublyLinkedList(){
 
 template<typename T>
 void DoublyLinkedList<T>::Insert(T val){
-	std::cout << "Inserting new element in Linked list";
+	std::cout << "Inserting new element in DLL";
 }
 

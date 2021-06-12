@@ -1,5 +1,4 @@
 #include "lib/lru_cache.h"
-
 #include <iostream>
 /*
 ToDo:
@@ -15,7 +14,8 @@ LRUCache<Key, Value>::LRUCache(size_t n) {
 
 template <typename Key, typename Value>
 LRUCache<Key, Value>::~LRUCache() {
-    printf("Deallocating objects");
+    printf("Deallocating- objects");
+
 }
 
 template <typename Key, typename Value>
@@ -25,9 +25,10 @@ Value &LRUCache<Key, Value>::operator[](Key key) {
 
 template <typename Key, typename Value>
 void LRUCache<Key, Value>::Insert(Key key, Value value) {
-    if (Empty()) {
-        list_->Insert(value);
-    }
+    printf("Inserting in Cache");
+    list_->Insert(value);
+    // if (Empty()) {
+    // }
     size_++;
 }
 
