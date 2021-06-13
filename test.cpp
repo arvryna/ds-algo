@@ -3,11 +3,12 @@
 #include "src/lru_cache.cpp"
 
 void Assert(const std::string &title, const std::string &expected, const std::string &got) {
+    std::cout << "[" + title + "]";
     if (expected == got) {
-        std::cout << title << ": Passed ✅" << std::endl;
+        std::cout << ": Passed ✅" << std::endl;
     } else {
-        std::cout << title << ": Failed ❌" << std::endl;
-        std::cout << "expected :" << expected << "got: " << got << std::endl;
+        std::cout << ": Failed ❌";
+        std::cout << " (Expected :" + expected + " Got: " + got +")"<< std::endl;
     }
 }
 
@@ -28,10 +29,8 @@ void TestLRUCache() {
 
     Assert("check size", "3", std::to_string(cache.Size()));
     Assert("check head", "50", std::to_string(cache.Peek()));
-    
 
     cache.Insert("ProductID-123", 10);
-    std::cout << cache["Orange"] << std::endl;
     cache.Clear();
 }
 

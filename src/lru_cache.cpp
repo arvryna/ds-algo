@@ -14,23 +14,34 @@ LRUCache<Key, Value>::LRUCache(size_t n) {
 
 template <typename Key, typename Value>
 LRUCache<Key, Value>::~LRUCache() {
+    Clear();
 }
 
 template <typename Key, typename Value>
 Value &LRUCache<Key, Value>::operator[](Key key) {
+    // For every access, promote that node to come to head
     return table_[key].value;
 }
 
 template <typename Key, typename Value>
 void LRUCache<Key, Value>::Insert(Key key, Value value) {
-    list_->Insert(value);
-    // if (Empty()) {
-    // }
-    size_++;
+    if(size_ == threshold_){
+        //Erase low priority node
+        // list_->Erase(table_[key].node);
+
+        // Insert new node and treat it as high priority
+    }else{
+        // Delete tail
+        // list_->Insert(value);
+        table_[key] = Data(value);
+        size_++;
+    }
 }
 
 template <typename Key, typename Value>
 void LRUCache<Key, Value>::Erase(Key key) {
+    table_.erase(key);
+    //remove from linkedlist
     size_--;
 }
 
@@ -48,9 +59,12 @@ template <typename Key, typename Value>
 void LRUCache<Key, Value>::Clear() {
     size_ = 0;
     table_.clear();
+    // list_->Clear();
+    // delete list_;
 }
 
 template <typename Key, typename Value>
 Value LRUCache<Key, Value>::Peek() {
-    return !Empty() ? list_->Peek() : 0;
+    // return !Empty() ? list_->Peek() : 0;
+    return 0;
 }
