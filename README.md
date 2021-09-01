@@ -8,3 +8,7 @@
 * LRU Cache in C++
 * Bloom filter
 
+# Algorithms:
+* Heapsort
+* Insertionsort
+* Quicksort
