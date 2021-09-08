@@ -5,7 +5,7 @@
 * Stack
 * Bigint
 * Doubly linked list
-* LRU Cache in C++
+* LRU Cache
 * Bloom filter
 
 # Algorithms:
