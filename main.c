@@ -55,7 +55,6 @@ struct Solution solve_quadatic_equation(double a, double b, double c) {
     double discriminant = calculate_discriminant(a, b, c);
     struct Solution solution;
     solution.type = find_root_type(discriminant);
-
     switch (solution.type) {
         case REAL_ROOTS_WITH_DIFFERENT_VALUES:
             solution.first_root = (-b + sqrt(fabs(discriminant))) / (2 * a);
@@ -71,7 +70,6 @@ struct Solution solve_quadatic_equation(double a, double b, double c) {
         default:
             break;
     }
-
     return solution;
 }
 
