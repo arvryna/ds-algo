@@ -1,5 +1,5 @@
-#include <math.h>
 #include <assert.h>
+#include <math.h>
 #include <stdio.h>
 
 enum RootType {
@@ -77,9 +77,9 @@ void solver() {
     double a, b, c;
     printf("Enter co-efficient of quadratic equation: a b c (with spaces): ");
     scanf("%lf %lf %lf", &a, &b, &c);
-    assert(a!=0);
-    assert(b!=0);
-    assert(c!=0);
+    assert(a != 0);
+    assert(b != 0);
+    assert(c != 0);
     struct Solution solution = solve_quadatic_equation(a, b, c);
     print_solution(solution);
 }
