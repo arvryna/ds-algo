@@ -1,5 +1,7 @@
+## Data structures and Algorithms in C++
 
-# Containers:
+
+## Containers:
 * Hashtables - OpenAddressing, Chaining
 * Heap
 * Stack
@@ -8,10 +10,10 @@
 * LRU Cache
 * Bloom filter
 
-# Algorithms:
+## Algorithms:
 * Heapsort
 * Insertionsort
 * Quicksort
 
-# Asymptotics
+## Asymptotics
 <img src="https://github.com/arvyshka/cpplab/blob/main/notes/analysis/complexity_chart.png" alt="MarineGEO circle logo" style="height: 500px; width:1000px;"/>
