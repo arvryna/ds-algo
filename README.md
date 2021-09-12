@@ -12,3 +12,6 @@
 * Heapsort
 * Insertionsort
 * Quicksort
+
+# Quick-chart
+![]
