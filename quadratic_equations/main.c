@@ -24,6 +24,22 @@ struct Solution {
     double imaginary_part;
 };
 
+enum RootType find_root_type(double discriminant) {
+    if (discriminant > 0) {
+        return REAL_ROOTS_WITH_DIFFERENT_VALUES;
+
+    } else if (discriminant == 0) {
+        return REAL_ROOTS_WITH_SAME_VALUES;
+
+    } else {
+        return IMAGINARY_ROOTS;
+    }
+}
+
+double calculate_discriminant(struct Coefficients coef) {
+    return (coef.second * coef.second) - (4 * coef.first * coef.third);
+}
+
 struct Solution solve_quadatic_equation(struct Coefficients coef) {
     double discriminant = calculate_discriminant(coef);
 
@@ -76,31 +92,13 @@ void print_solution(struct Solution solution) {
     }
 }
 
-double calculate_discriminant(struct Coefficients coef) {
-    return (coef.second * coef.second) - (4 * coef.first * coef.third);
-}
-
-enum RootType find_root_type(double discriminant) {
-    if (discriminant > 0) {
-        return REAL_ROOTS_WITH_DIFFERENT_VALUES;
-
-    } else if (discriminant == 0) {
-        return REAL_ROOTS_WITH_SAME_VALUES;
-
-    } else {
-        return IMAGINARY_ROOTS;
-    }
-}
-
 struct Coefficients equation_input() {
-    struct Coefficients coef;
     printf("Enter co-efficient of quadratic equation: a b c (with spaces): ");
 
+    struct Coefficients coef;
     scanf("%lf %lf %lf", &coef.first, &coef.second, &coef.third);
 
-    assert(coef.first != 0);
-    assert(coef.second != 0);
-    assert(coef.third != 0);
+    assert(coef.first != 0 || coef.second != 0 || coef.third != 0);
 
     return coef;
 }
